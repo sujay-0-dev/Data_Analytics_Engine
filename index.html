@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 2 - Advanced Data Structures & Array Methods</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📊 Day 2/120 - Data Analytics Engine</h1>
+            <p>Advanced Array Methods & Data Structures</p>
+        </header>
+
+        <div class="stats-overview">
+            <div class="stat-card">
+                <h3>📈 Sales Data</h3>
+                <div id="sales-count">0</div>
+                <p>Total Records</p>
+            </div>
+            <div class="stat-card">
+                <h3>💰 Revenue</h3>
+                <div id="total-revenue">$0</div>
+                <p>Total Revenue</p>
+            </div>
+            <div class="stat-card">
+                <h3>🏆 Top Product</h3>
+                <div id="top-product">Loading...</div>
+                <p>Best Seller</p>
+            </div>
+            <div class="stat-card">
+                <h3>🌍 Regions</h3>
+                <div id="unique-regions">0</div>
+                <p>Active Regions</p>
+            </div>
+        </div>
+
+        <div class="controls-section">
+            <h2>🎛️ Data Processing Controls</h2>
+            <div class="controls-grid">
+                <div class="control-group">
+                    <label for="region-filter">Filter by Region:</label>
+                    <select id="region-filter">
+                        <option value="all">All Regions</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label for="min-amount">Minimum Sale Amount:</label>
+                    <input type="number" id="min-amount" placeholder="0" min="0">
+                </div>
+                <div class="control-group">
+                    <label for="product-filter">Filter by Product:</label>
+                    <select id="product-filter">
+                        <option value="all">All Products</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <button id="apply-filters">Apply Filters</button>
+                    <button id="reset-filters">Reset</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="methods-showcase">
+            <h2>🔧 Array Methods in Action</h2>
+            <p class="methods-description">Explore powerful JavaScript array methods with real-time data processing demonstrations</p>
+            <div class="methods-grid">
+                <div class="method-card transform">
+                    <div class="method-icon">🗺️</div>
+                    <h3>Transform Data</h3>
+                    <p class="method-description">Use map() to transform and enrich sales data with calculated fields</p>
+                    <button id="transform-btn" class="method-btn">Run Transform</button>
+                    <div id="map-output" class="output"></div>
+                </div>
+
+                <div class="method-card filter">
+                    <div class="method-icon">🔍</div>
+                    <h3>Filter High Sales</h3>
+                    <p class="method-description">Apply filter() to find high-value sales and premium products</p>
+                    <button id="filter-btn" class="method-btn">Run Filter</button>
+                    <div id="filter-output" class="output"></div>
+                </div>
+
+                <div class="method-card reduce">
+                    <div class="method-icon">📊</div>
+                    <h3>Calculate Totals</h3>
+                    <p class="method-description">Use reduce() for complex aggregations and statistical analysis</p>
+                    <button id="reduce-btn" class="method-btn">Run Reduce</button>
+                    <div id="reduce-output" class="output"></div>
+                </div>
+
+                <div class="method-card find">
+                    <div class="method-icon">🎯</div>
+                    <h3>Search Operations</h3>
+                    <p class="method-description">Demonstrate find(), some(), and every() for targeted searches</p>
+                    <button id="find-btn" class="method-btn">Run Search</button>
+                    <div id="find-output" class="output"></div>
+                </div>
+
+                <div class="method-card set">
+                    <div class="method-icon">📋</div>
+                    <h3>Unique Values</h3>
+                    <p class="method-description">Leverage Set data structure for unique collections and operations</p>
+                    <button id="set-btn" class="method-btn">Run Set Ops</button>
+                    <div id="set-output" class="output"></div>
+                </div>
+
+                <div class="method-card map-collection">
+                    <div class="method-icon">🗂️</div>
+                    <h3>Group Data</h3>
+                    <p class="method-description">Use Map collections for advanced grouping and analytics</p>
+                    <button id="map-collection-btn" class="method-btn">Run Grouping</button>
+                    <div id="map-collection-output" class="output"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="data-table-section">
+            <h2>📋 Processed Data Results</h2>
+            <div class="table-controls">
+                <button id="sort-by-amount">Sort by Amount</button>
+                <button id="sort-by-date">Sort by Date</button>
+                <button id="group-by-region">Group by Region</button>
+            </div>
+            <div class="table-container">
+                <table id="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Product</th>
+                            <th>Amount</th>
+                            <th>Region</th>
+                            <th>Date</th>
+                            <th>Category</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <!-- Data will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="performance-section">
+            <h2>⚡ Performance Metrics</h2>
+            <div class="performance-grid">
+                <div class="perf-card">
+                    <h4>Processing Speed</h4>
+                    <div id="processing-time">0ms</div>
+                </div>
+                <div class="perf-card">
+                    <h4>Memory Usage</h4>
+                    <div id="memory-usage">Calculating...</div>
+                </div>
+                <div class="perf-card">
+                    <h4>Operations/sec</h4>
+                    <div id="operations-per-sec">0</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
